@@ -1,0 +1,22 @@
+/* Global*/
+* { 
+	box-sizing: border-box;
+}
+body {
+	text-align: center;
+	background-color: $primary-bg-color;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+img {
+	max-width: 100%;
+}
+
+/* Link Styles */
+a {
+	text-decoration: none;
+	color: $links-color;
+}

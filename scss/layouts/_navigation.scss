@@ -1,0 +1,13 @@
+.nav-container {
+	list-style-type: none;	
+}
+.nav-icon {
+	height: 50px;
+	width: 40px;
+	margin: 40px auto;
+	opacity: 0.6;
+	transition: all .3s;
+}
+.nav-icon:hover {
+	opacity: 1;
+}

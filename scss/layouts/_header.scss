@@ -1,0 +1,99 @@
+header {
+	background: #7477BF;
+}
+.header-container {
+	max-width: 1600px;
+	display: flex;
+	height: 6.25em;
+	width: 100%;
+	align-items: center;
+	@include mobile {
+		height: 5em;
+	}
+}
+.app_name {
+	font-family: $base-font;
+	font-weight: $thick;
+	margin-left: 1em;
+	flex-basis: 75%;
+	color: white;
+	text-align: left;
+	font-size: $lg-font;
+	@include mobile {
+		margin-left: 0;
+		flex-basis: 63%;
+		font-size: 1.6em;
+	}
+}
+.app_name .app {
+	font-weight: $thin;
+}
+.app_name .tm {
+	font-size: $mini-font;
+	vertical-align: text-top;
+}
+.notification_icon {
+	height: 1.875em;
+	width: 1.875em;
+	#indicator {
+		height: 8px;
+		width: 8px;
+		border-radius: 50%;
+		background: #BFE2C5;
+		margin-left: 21px;
+	}
+	@include mobile {
+		display: none;
+	}
+}
+.vr {
+	height: 5em;
+	width: 2px;
+	background-color: #5E62BF;
+	margin: 0 1em 0 2em;
+}
+.avatar_holder {
+	padding: 0 1em;
+	@include mobile {
+		display: none;
+	}
+}
+.avatar_holder img {
+	border-radius: 50%;
+	max-height: 50px;
+}
+.name {
+	color: white;
+	margin: 0 2em 0 1em;
+	font-family: $specialty-font;
+	@include mobile {
+		display: none;
+	}
+}
+.mobileMenuIcon {
+	display: none;
+	height: 30px;
+	width: 30px;
+	@include mobile {
+		display: inline;
+	}
+}
+.mobileMenu {
+	display: none;
+	width: 100%;
+	li {
+		color: white;
+		font-family: $specialty-font;
+		font-size: $md-font;
+		background: #7477BF;
+		border: 1px solid white;
+		padding: 5px 0;
+		a {
+			display: inline-block;
+			color: inherit;
+			font-family: inherit;
+			font-size: inherit;
+			width: 100%;
+		}
+	}
+}

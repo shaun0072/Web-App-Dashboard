@@ -1,0 +1,607 @@
+.wrapper {
+	width: 100%;
+	height: 100%;
+	max-width: 1600px;
+	min-width: 440px;
+}
+header {
+	position: fixed;
+    top: 0;
+    height: 6.25em;
+    width: 100%;
+    max-width: 1600px;
+	@include mobile {
+		position: static;
+		height: 5em;
+	}
+}
+nav {
+	position: fixed;
+	left:0;
+    top: 6.25em;
+    height: 100%;
+    width: 6.25em;
+	z-index: 2;
+	background: rgb(78, 75, 118);
+	@include mobile {
+		display: none;
+	}
+}
+main {
+	margin: 100px 0 0 100px;
+	z-index: -1;
+	background: #FFF;
+	max-width: 1500px;
+	@include tablet {
+		width: 90%;
+		left: 6.25em;
+	}
+	@include mobile {
+		margin-left: 0;
+		width: 100%;
+		left: 0;
+	}
+}
+#alertBox {
+	background-color: #7477BF;
+	color: #FFFFFF;
+	text-align: left;
+	font-family: $specialty-font;
+	font-size: $md-font;
+	padding: 1.25em;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin: 2.5em 2.5em 0;
+	@include mobile {
+		font-size: .8em;
+	}
+	.alert {
+		margin-right: .43em;
+		font-weight: $thick;
+		@include mobile {
+		display: block;
+	}
+	}
+	.close {
+		float: right;
+		font-size: $lg-font;
+		cursor: pointer;
+		margin-top: -.8125em;
+		@include mobile {
+			position: relative;
+			top: -23px;
+		}
+	}
+}
+.chartHeading {
+	margin: 0;
+	padding: 0 0 2.13em;
+	text-align: left;
+	font-family: $specialty-font;
+	color: #676666;
+	text-transform: uppercase;
+	@include mobile {
+		text-align: center;
+	}
+}
+#timeSpanList {
+	  list-style-type: none;
+	  float: right;
+	  font-family: $specialty-font;
+	  color: #676666;
+	li {
+		display: inline-block;
+		padding: 0 .625em;
+		font-family: $specialty-font;
+		color: #676666;
+		font-weight: $thick;
+		&.active,
+		&:hover {
+			background: #81CA8F;
+			color: #FFFFFF;
+			border-radius: 1.25em;
+			cursor: pointer;
+		}
+	}
+}
+#widget-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+.traffic,
+.dailyTraffic,
+.mobileUsers,
+.socialStats,
+.newMembers,
+.recentActivity,
+.messageUser,
+.settings {
+	padding: 1.25em 2.5em;
+	@include mobile {
+		padding: 1em 0;
+	}
+	canvas {
+		padding-bottom: 50px;
+	}
+}
+.traffic {
+	padding: 1.25em 1.25em 1.25em 2.5em;
+	flex-basis: 100%;
+	margin: 1.25em 0 4.375em;
+	height: 25em;
+	@include mobile {
+		padding: 0;
+		height: 30em;
+	}
+}
+.dailyTraffic {
+	flex-basis: 50%;
+	border-top: 1px solid #D2D2D2;
+	border-right: 1px solid #D2D2D2;
+	height: 25em;
+	@include tablet {
+		flex-basis: 100%;
+		height: 30em;
+	}
+	@include mobile {
+		height: 28em;
+		padding-top: 40px;
+	}
+}
+.mobileUsers {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-basis: 49%;
+	border-top: 1px solid #D2D2D2;
+	border-left: 1px solid #D2D2D2;
+	height: 25em;
+	@include tablet {
+		flex-basis: 100%;
+	}
+	h3 {
+		flex-basis: 100%;
+		align-self: flex-start;
+	}
+	.pieChartHolder {
+		flex-basis: 70%;
+	}
+	ul {
+		flex-basis: 30%;
+		margin-top: -1.25em;
+		margin-left: -2.5em;
+		padding: 0;
+		text-align: left;
+		@include mobile {
+				margin-left: -4em;
+			}
+		li {
+			margin: 1.25em 0;
+			font-family: $specialty-font;
+			@include mobile {
+				font-size: .9em;
+			}
+		}
+		span {
+			display: inline-block;
+			height: 1.875em;
+			width: 1.875em;
+			border-radius: 5px;
+			margin: 0 1.25em -.625em 0;
+			@include mobile {
+				height: 1em;
+				width: 1em;
+				margin: 0 6px -3px 0;
+			}
+		}
+	}
+	canvas {
+		padding: 0;
+	}
+}
+.socialStats {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-basis: 100%;
+	border-top: 1px solid #D2D2D2;
+	border-bottom: 1px solid #D2D2D2;
+	height: 18.75em;
+	@include tablet {
+		height: 35em;
+	}
+	h3 {
+		flex-basis: 100%;
+		padding: 0;
+	}
+	.socialStatsHolder {
+		flex-basis: 100%;
+		display: flex;
+		justify-content: center;
+		@include tablet {
+			flex-wrap: wrap;
+		}
+		.twitter,
+	    .facebook,
+	    .google {
+			flex-basis: 26%;
+			height: 7.8125em;
+			border: 1px solid black;
+			background: #FBFBFB;
+			margin: 0 1.25em;
+			padding: 0 16px;
+			@include tablet {
+				margin-top: 1.3125em;
+				flex-basis: 100%;
+			}
+		}
+	}	
+}
+.twitter,
+.facebook,
+.google {
+	 display: flex;
+}
+.icon-container {
+	flex-basis: 30%;
+	align-self: center;
+	.twitter-circle,
+	.facebook-circle,
+	.google-circle {
+		display: inline-block;
+		padding: 1.25em;
+		background: #7477BF;
+		border-radius: 50%;
+	}
+}
+.t-group,
+.f-group,
+.g-group {
+	flex-basis: 60%;
+	h5,
+	div {
+		margin: 0;
+		text-align: left;
+		padding: 0;
+	}
+	h5 {
+		margin-top: 1.25em;
+		font-size: 1em;
+		color: #7477BF;
+	}
+	div {
+		font-size: 3.3em;
+		font-family: $base-font;
+		font-weight: 300;
+	}
+}
+
+.twitter-icon,
+.facebook-icon,
+.google-icon {
+	height: 2.5em;
+	width: 2.5em;
+	path {
+		fill: white;
+	}
+}
+.newMembers {
+	flex-basis: 50%;
+	border-top: 1px solid #D2D2D2;
+	border-right: 1px solid #D2D2D2;
+	height: 31.25em;
+	overflow: hidden;
+	@include tablet {
+		flex-basis: 100%;
+		height: 35em;
+	}
+	@include mobile {
+		height: 30em;
+	}
+}
+.new-mem-group {
+	list-style-type: none;
+	width: 100%;
+}
+.new-mem-item {
+	display: flex;
+	border-bottom: 1px solid #D2D2D2;
+	padding-bottom: 1.13em;
+	margin-bottom: .625em;
+	&:last-child {
+		border: 0;
+	}
+	.pic-container {
+		flex-basis: 10%;
+		.pic-circle {
+			border-radius: 50%;
+		}
+	}
+	.name-email-container {
+		padding: 9px 0 0 15px;
+		flex-basis: 50%;
+		text-align: left;
+		.mem-name {
+			color: #676666;
+			font-family: $specialty-font;
+			font-weight: $thick;
+			font-size: 1.25em;
+		}
+		.mem-email a {
+			color: #7477BF;
+		}
+		
+	}
+	.date-container {
+		flex-basis: 40%;
+		text-align: right;
+		margin-top: 1.5625em;
+	}
+}
+.recentActivity {
+	flex-basis: 50%;
+	border-top: 1px solid #D2D2D2;
+	border-left: 1px solid #D2D2D2;
+	height: 31em;
+	overflow: hidden;
+	@include tablet {
+		flex-basis: 100%;
+		height: 35em;
+	}
+}
+.recent-activity-list {
+	list-style-type: none;
+}
+.activity-item {
+	display: flex;
+	border-bottom: 1px solid #D2D2D2;
+	padding-bottom: 1.125em;
+	margin-bottom: .625em;
+	&:last-child {
+		border: 0;
+	}
+	.svg-container {
+		flex-basis: 10%;
+		.svg-circle {
+			border-radius: 50%;
+		}
+	}
+	.name-time-container {
+		flex-basis: 80%;
+		text-align: left;
+		padding: .875em 0 0 1em;
+		font-family: $specialty-font;
+		color: #676666;
+		.name {
+			margin: 0;
+			font-family: $specialty-font;
+			color:  #676666;			
+		}
+		.place,
+		.time-ago {
+			font-weight: bold;
+			font-family: $specialty-font;
+			color:  #676666;	
+		}		
+	}
+	.arrow {
+		flex-basis: 10%;
+		margin-top: 2.5em;
+	}
+}
+.messageUser {
+	flex-basis: 50%;
+	border-top: 1px solid #D2D2D2;
+	border-right: 1px solid #D2D2D2;
+	height: 43.75em;
+	@include tablet {
+		flex-basis: 100%;
+		height: 38em;
+	}
+	@include mobile {
+		padding: 40px 10px 10px;
+	}
+	input {
+		background: #FBFBFB;
+	    border-radius: 5px;
+	    outline: none;
+	    border: 1px solid #DFDFDF;
+		display: block;
+		width: 100%;
+		height: 3.125em;
+		padding: 1.25em;
+		margin-bottom: 1.875em;
+		font-family: $specialty-font;
+		font-weight: 300;
+		font-size: $md-font;
+		&:placeholder-shown {
+			font-family: $specialty-font;
+			font-weight: 300;
+			font-size: $md-font;
+		}
+	}
+	textarea {
+		@extend input;
+		height: 12.5em;
+	}
+	input,
+	textarea {
+		@include mobile {
+			margin-left: 0.2em;
+			margin-right: 0.2em;
+		}
+	}
+	button {
+		display: block;
+		width: 100%;
+		background: #7477BF;
+		height: 4.6875em;
+		border-radius: 10px;
+		color: white;
+		font-family: $base-font;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: $md-font;
+		border: none;
+		outline: none;
+		@include tablet {
+			height: 2.25em;
+		}
+	}
+}
+
+.settings {
+	flex-basis: 50%;
+	border-top: 1px solid #D2D2D2;
+	border-left: 1px solid #D2D2D2;
+	height: 43.75em;
+	@include tablet {
+		flex-basis: 100%;
+	}
+	@include mobile {
+		padding: 40px 10px 10px;
+	}
+}
+.email-notifications,
+.profile-to-public {
+	display: flex;
+	align-items: center;
+	text-align: left;
+	font-family: $specialty-font;
+	font-weight: bold;
+	font-size: $md-font; 
+	span {
+		flex-basis: 50%;
+	}
+}
+.profile-to-public {
+	margin-top: 2.8125em;
+}
+.onoffswitch {
+	display: inline-block;
+    position: relative; 
+	width: 7.5625em;
+    -webkit-user-select:none; 
+	-moz-user-select:none; 
+	-ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; 
+	overflow: hidden; 
+	cursor: pointer;
+    border: 2px solid #999999; 
+	border-radius: 2em;
+}
+.onoffswitch-inner {
+    display: block; 
+	width: 200%; 
+	margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; 
+	float: left; 
+	width: 50%; 
+	height: 44px; 
+	padding: 0; 
+	line-height: 44px;
+    font-size: 22px; 
+	color: white; 
+	font-family: Trebuchet, Arial, sans-serif; 
+	font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #7477BF; 
+	color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; 
+	color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; 
+	width: 28px; 
+	margin: 8px;
+    background: #FFFFFF;
+    position: absolute; 
+	top: 0; 
+	bottom: 0;
+    right: 73px;
+    border: 2px solid #999999; 
+	border-radius: 32px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+.time-zone-select {
+	margin-top: 65px;
+	display: block;
+	font-family: $specialty-font;
+	font-weight: 300;
+	font-size: $md-font;
+	background: #FBFBFB;
+	border-radius: 5px;
+	outline: none;
+	border: 1px solid #DFDFDF;
+	width: 100%;
+	height: 65px;
+	padding-left: 20px;
+}
+.save-cancel-btns {
+	display: flex;
+	margin-top: 7.5em;
+	@include mobile {
+		margin-top: 3em;
+	}
+	.save,
+	.cancel {
+		flex-basis: 50%;
+		display: block;
+		height: 4.6875em;
+		border-radius: 10px;
+		background: #7477BF;
+		color: white;
+		font-family: $base-font;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: $md-font;
+		border: none;
+		outline: none; 
+		@include tablet {
+			height: 2.25em;
+		}
+	}
+	.cancel {
+		background: #B2B2B2;
+		margin-left: 35px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

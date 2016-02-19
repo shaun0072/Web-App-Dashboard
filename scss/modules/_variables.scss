@@ -1,0 +1,37 @@
+/**********Colors************/
+$primary-bg-color    : rgb(248, 248, 248);
+$nav-bg         : #4E4B76;
+$content-color  : white;
+$links-color    : black;
+$hover-color    : gray;
+$chart-secondary: #E2E3F7;
+
+
+/**********Typography************/
+$base-font      :  'Lato', sans-serif;
+$specialty-font : 'Open Sans', sans-serif;
+$thin           :  100;
+$thick			:  700;
+$lg-font        : 1.9em;
+$md-font        : 1.3em;
+$sm-font        : .9em;
+$mini-font      : .5em;
+
+/**********Mixins************/
+
+
+
+/*********************Media Queries*********************/
+$tablet-width : 1100px;
+$mobile-width : 800px;
+
+@mixin tablet {
+	@media (max-width: #{$tablet-width}) {
+		@content;
+	}
+}
+@mixin mobile {
+	@media (max-width: #{$mobile-width}) {
+		@content;
+	}
+}
