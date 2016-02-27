@@ -23,7 +23,7 @@ $mini-font      : .5em;
 
 /*********************Media Queries*********************/
 $tablet-width : 1100px;
-$mobile-width : 800px;
+$mobile-width : 700px;
 
 @mixin tablet {
 	@media (max-width: #{$tablet-width}) {

@@ -395,8 +395,7 @@ a {
 .wrapper {
   width: 100%;
   height: 100%;
-  max-width: 1600px;
-  min-width: 440px; }
+  max-width: 1600px; }
 
 header {
   position: fixed;
@@ -404,7 +403,7 @@ header {
   height: 6.25em;
   width: 100%;
   max-width: 1600px; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     header {
       position: static;
       height: 5em; } }
@@ -417,7 +416,7 @@ nav {
   width: 6.25em;
   z-index: 2;
   background: #4e4b76; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     nav {
       display: none; } }
 
@@ -428,15 +427,17 @@ main {
   max-width: 1500px; }
   @media (max-width: 1100px) {
     main {
-      width: 90%;
+      width: calc(100% - 100px);
       left: 6.25em; } }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     main {
       margin-left: 0;
       width: 100%;
-      left: 0; } }
+      left: 0;
+      margin-top: 15px; } }
 
 #alertBox {
+  position: relative;
   background-color: #7477BF;
   color: #FFFFFF;
   text-align: left;
@@ -446,24 +447,23 @@ main {
   box-sizing: border-box;
   border-radius: 5px;
   margin: 2.5em 2.5em 0; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     #alertBox {
-      font-size: .8em; } }
+      font-size: .8em;
+      margin-top: 0; } }
   #alertBox .alert {
     margin-right: .43em;
     font-weight: 700; }
-    @media (max-width: 800px) {
+    @media (max-width: 700px) {
       #alertBox .alert {
         display: block; } }
   #alertBox .close {
-    float: right;
+    position: absolute;
+    top: -7px;
+    right: 0;
     font-size: 1.9em;
     cursor: pointer;
-    margin-top: -.8125em; }
-    @media (max-width: 800px) {
-      #alertBox .close {
-        position: relative;
-        top: -23px; } }
+    margin-right: 10px; }
 
 .chartHeading {
   margin: 0;
@@ -472,7 +472,7 @@ main {
   font-family: "Open Sans", sans-serif;
   color: #676666;
   text-transform: uppercase; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .chartHeading {
       text-align: center; } }
 
@@ -506,7 +506,7 @@ main {
 .messageUser,
 .settings {
   padding: 1.25em 2.5em; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .traffic,
     .dailyTraffic,
     .mobileUsers,
@@ -524,70 +524,84 @@ main {
   .recentActivity canvas,
   .messageUser canvas,
   .settings canvas {
-    padding-bottom: 50px; }
+    padding-bottom: 25px; }
 
 .traffic {
   padding: 1.25em 1.25em 1.25em 2.5em;
   flex-basis: 100%;
   margin: 1.25em 0 4.375em;
   height: 25em; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .traffic {
       padding: 0;
-      height: 30em; } }
+      height: 22em; } }
+  .traffic canvas {
+    width: 100% !important; }
 
 .dailyTraffic {
   flex-basis: 50%;
   border-top: 1px solid #D2D2D2;
   border-right: 1px solid #D2D2D2;
-  height: 25em; }
+  height: 100%; }
+  .dailyTraffic canvas {
+    width: 100% !important; }
   @media (max-width: 1100px) {
     .dailyTraffic {
       flex-basis: 100%;
-      height: 30em; } }
-  @media (max-width: 800px) {
+      height: 100%; } }
+  @media (max-width: 700px) {
     .dailyTraffic {
-      height: 28em;
       padding-top: 40px; } }
 
 .mobileUsers {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  flex-basis: 49%;
+  flex-basis: 50%;
   border-top: 1px solid #D2D2D2;
   border-left: 1px solid #D2D2D2;
-  height: 25em; }
+  height: 100%; }
+  .mobileUsers canvas {
+    width: 100% !important; }
   @media (max-width: 1100px) {
     .mobileUsers {
-      flex-basis: 100%; } }
+      flex-basis: 100%;
+      height: 100%; } }
   .mobileUsers h3 {
     flex-basis: 100%;
     align-self: flex-start; }
   .mobileUsers .pieChartHolder {
-    flex-basis: 70%; }
+    flex-basis: 70%;
+    padding-top: 35px; }
+    @media (max-width: 1100px) {
+      .mobileUsers .pieChartHolder {
+        padding-top: 0; } }
+  @media (max-width: 700px) {
+    .mobileUsers {
+      flex-basis: 100%; } }
   .mobileUsers ul {
     flex-basis: 30%;
     margin-top: -1.25em;
     margin-left: -2.5em;
     padding: 0;
     text-align: left; }
-    @media (max-width: 800px) {
-      .mobileUsers ul {
-        margin-left: -4em; } }
     .mobileUsers ul li {
       margin: 1.25em 0;
       font-family: "Open Sans", sans-serif; }
-      @media (max-width: 800px) {
+      @media (max-width: 1100px) {
         .mobileUsers ul li {
-          font-size: .9em; } }
+          font-size: .8em;
+          margin-left: -1.5em; } }
+      @media (max-width: 700px) {
+        .mobileUsers ul li {
+          font-size: .6em; } }
     .mobileUsers ul span {
       display: inline-block;
       height: 1.875em;
       width: 1.875em;
       border-radius: 5px;
       margin: 0 1.25em -.625em 0; }
-      @media (max-width: 800px) {
+      @media (max-width: 700px) {
         .mobileUsers ul span {
           height: 1em;
           width: 1em;
@@ -602,7 +616,8 @@ main {
   flex-basis: 100%;
   border-top: 1px solid #D2D2D2;
   border-bottom: 1px solid #D2D2D2;
-  height: 18.75em; }
+  height: 18.75em;
+  width: 100%; }
   @media (max-width: 1100px) {
     .socialStats {
       height: 35em; } }
@@ -651,7 +666,7 @@ main {
 .t-group,
 .f-group,
 .g-group {
-  flex-basis: 60%; }
+  flex-basis: 70%; }
   .t-group h5,
   .t-group div,
   .f-group h5,
@@ -664,21 +679,37 @@ main {
   .t-group h5,
   .f-group h5,
   .g-group h5 {
-    margin-top: 1.25em;
+    margin-top: 1.5em;
     font-size: 1em;
     color: #7477BF; }
+    @media (max-width: 700px) {
+      .t-group h5,
+      .f-group h5,
+      .g-group h5 {
+        margin-top: 2.0em; } }
   .t-group div,
   .f-group div,
   .g-group div {
     font-size: 3.3em;
     font-family: "Lato", sans-serif;
     font-weight: 300; }
+    @media (max-width: 700px) {
+      .t-group div,
+      .f-group div,
+      .g-group div {
+        font-size: 2em; } }
 
 .twitter-icon,
 .facebook-icon,
 .google-icon {
   height: 2.5em;
   width: 2.5em; }
+  @media (max-width: 700px) {
+    .twitter-icon,
+    .facebook-icon,
+    .google-icon {
+      height: 1.8em;
+      width: 1.8em; } }
   .twitter-icon path,
   .facebook-icon path,
   .google-icon path {
@@ -693,10 +724,7 @@ main {
   @media (max-width: 1100px) {
     .newMembers {
       flex-basis: 100%;
-      height: 35em; } }
-  @media (max-width: 800px) {
-    .newMembers {
-      height: 30em; } }
+      height: 100%; } }
 
 .new-mem-group {
   list-style-type: none;
@@ -711,6 +739,9 @@ main {
     border: 0; }
   .new-mem-item .pic-container {
     flex-basis: 10%; }
+    @media (max-width: 700px) {
+      .new-mem-item .pic-container {
+        flex-basis: 15%; } }
     .new-mem-item .pic-container .pic-circle {
       border-radius: 50%; }
   .new-mem-item .name-email-container {
@@ -721,13 +752,20 @@ main {
       color: #676666;
       font-family: "Open Sans", sans-serif;
       font-weight: 700;
-      font-size: 1.25em; }
+      font-size: 1.5em; }
+    @media (max-width: 700px) {
+      .new-mem-item .name-email-container {
+        font-size: 0.9em; } }
     .new-mem-item .name-email-container .mem-email a {
       color: #7477BF; }
   .new-mem-item .date-container {
     flex-basis: 40%;
     text-align: right;
     margin-top: 1.5625em; }
+  @media (max-width: 700px) {
+    .new-mem-item {
+      font-size: .8em;
+      flex-basis: 30%; } }
 
 .recentActivity {
   flex-basis: 50%;
@@ -738,7 +776,7 @@ main {
   @media (max-width: 1100px) {
     .recentActivity {
       flex-basis: 100%;
-      height: 35em; } }
+      height: 100%; } }
 
 .recent-activity-list {
   list-style-type: none; }
@@ -751,15 +789,19 @@ main {
   .activity-item:last-child {
     border: 0; }
   .activity-item .svg-container {
-    flex-basis: 10%; }
+    flex-basis: 10%;
+    align-self: center; }
     .activity-item .svg-container .svg-circle {
       border-radius: 50%; }
   .activity-item .name-time-container {
     flex-basis: 80%;
     text-align: left;
-    padding: .875em 0 0 1em;
+    padding: 0 0 0 1em;
     font-family: "Open Sans", sans-serif;
     color: #676666; }
+    @media (max-width: 700px) {
+      .activity-item .name-time-container {
+        font-size: .875em; } }
     .activity-item .name-time-container .name {
       margin: 0;
       font-family: "Open Sans", sans-serif;
@@ -781,8 +823,8 @@ main {
   @media (max-width: 1100px) {
     .messageUser {
       flex-basis: 100%;
-      height: 38em; } }
-  @media (max-width: 800px) {
+      height: 100%; } }
+  @media (max-width: 700px) {
     .messageUser {
       padding: 40px 10px 10px; } }
   .messageUser input, .messageUser textarea {
@@ -802,9 +844,18 @@ main {
       font-family: "Open Sans", sans-serif;
       font-weight: 300;
       font-size: 1.3em; }
+      @media (max-width: 700px) {
+        .messageUser input:placeholder-shown, .messageUser textarea:placeholder-shown {
+          font-size: 0.9em; } }
+    @media (max-width: 700px) {
+      .messageUser input, .messageUser textarea {
+        height: 1em;
+        margin-bottom: 0.875em;
+        padding: 1em;
+        font-size: 0.9em; } }
   .messageUser textarea {
     height: 12.5em; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .messageUser input, .messageUser textarea,
     .messageUser textarea {
       margin-left: 0.2em;
@@ -834,7 +885,7 @@ main {
   @media (max-width: 1100px) {
     .settings {
       flex-basis: 100%; } }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .settings {
       padding: 40px 10px 10px; } }
 
@@ -846,6 +897,10 @@ main {
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
   font-size: 1.3em; }
+  @media (max-width: 700px) {
+    .email-notifications,
+    .profile-to-public {
+      font-size: 0.9em; } }
   .email-notifications span,
   .profile-to-public span {
     flex-basis: 50%; }
@@ -935,11 +990,15 @@ main {
   width: 100%;
   height: 65px;
   padding-left: 20px; }
+  @media (max-width: 700px) {
+    .time-zone-select {
+      height: 35px;
+      font-size: 0.9em; } }
 
 .save-cancel-btns {
   display: flex;
   margin-top: 7.5em; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .save-cancel-btns {
       margin-top: 3em; } }
   .save-cancel-btns .save,
@@ -973,7 +1032,7 @@ header {
   height: 6.25em;
   width: 100%;
   align-items: center; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .header-container {
       height: 5em; } }
 
@@ -985,7 +1044,7 @@ header {
   color: white;
   text-align: left;
   font-size: 1.9em; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .app_name {
       margin-left: 0;
       flex-basis: 63%;
@@ -1007,7 +1066,7 @@ header {
     border-radius: 50%;
     background: #BFE2C5;
     margin-left: 21px; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .notification_icon {
       display: none; } }
 
@@ -1019,7 +1078,7 @@ header {
 
 .avatar_holder {
   padding: 0 1em; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .avatar_holder {
       display: none; } }
 
@@ -1031,7 +1090,7 @@ header {
   color: white;
   margin: 0 2em 0 1em;
   font-family: "Open Sans", sans-serif; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .name {
       display: none; } }
 
@@ -1039,7 +1098,7 @@ header {
   display: none;
   height: 30px;
   width: 30px; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .mobileMenuIcon {
       display: inline; } }
 
@@ -1063,7 +1122,7 @@ header {
 .subheader {
   display: flex;
   height: 4.375em; }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     .subheader {
       display: none; } }
 
@@ -1081,7 +1140,7 @@ header {
     .tab {
       flex-basis: 15%; } }
   .tab span {
-    padding-left: 5px; }
+    padding: 0 20px 0 5px; }
 
 .searchBox_container {
   display: flex;

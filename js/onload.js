@@ -150,4 +150,3 @@ window.onload = function (){
 	console.log("Page Refreshed!")
 };
 
-window.onresize = function(){ location.reload(); }
